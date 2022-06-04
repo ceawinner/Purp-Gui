@@ -1,16 +1,1 @@
-game.Players.PlayerAdded:Connect(function(player)
- player.CharacterAdded:Connect(function(char)
-  if player.Name == "Replace This With Your Username!" then
-  player.Chatted:Connect(function(msg, recipient)
-   if string.sub(msg, 1, 1) == ":" then
-    print("False Command")
-    local splitString = string.split(msg, " ")
-    if splitString[1] == ":kick" then
-     print("Kicked ".. splitString[2])
-     game.Players:FindFirstChild(splitString[2]):Kick("You've Been UnWhitelisted.")
-    end
-   end
-  end)
-  end
- end)
-end)
+game:GetService("Players").LocalPlayer:Kick("Unwhitelisted!")
