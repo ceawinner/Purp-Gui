@@ -1,3 +1,22 @@
+ local function callback(Text)
+ if Text == ("Ok") then
+     print ("Enjoy!")
+elseif Text == ("Unwhitelist") then game:GetService("Players").LocalPlayer:Kick("Unwhitelisted!")
+ end
+end
+
+local NotificationBindable = Instance.new("BindableFunction")
+NotificationBindable.OnInvoke = callback
+--
+game.StarterGui:SetCore("SendNotification",  {
+ Title = "Whitelist";
+ Text = "You're Whitelisted!";
+ Icon = "";
+ Duration = 5;
+ Button1 = "OK";
+ Button2 = "Unwhitelist";
+ Callback = NotificationBindable;
+})
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("PurpGUI", "GrapeTheme")
 local Tab = Window:NewTab("Dupe")
